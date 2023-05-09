@@ -13,7 +13,7 @@ const config: DocsThemeConfig = {
     component: null
   },
   sidebar: {
-    defaultMenuCollapseLevel: 0,
+    defaultMenuCollapseLevel: 1,
   },
   footer: {
     text: <Footer />,

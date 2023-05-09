@@ -1,0 +1,24 @@
+# JavaScript: Crawl Directory
+
+### Javascript: Crawl directory recursively.
+
+<CH.Code>
+  ```javascript copy-to-clipboard.js
+    const fs = require("fs");
+    const path = require("path");
+
+    async function* crawl(dir) {
+      for (const d of fs.opendirSync(dir)) {
+        const entry = path.join(dir, d.name);
+        if (d.isDirectory()) yield* crawl(entry);
+        else if (d.isFile()) yield entry;
+      }
+    }
+
+    async function main() {
+      const dir = "."
+      for await (const p of crawl(dir))
+        console.log(p)
+    }
+  ```
+</CH.Code>

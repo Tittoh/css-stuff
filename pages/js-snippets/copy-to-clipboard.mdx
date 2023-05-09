@@ -1,0 +1,26 @@
+# JavaScript copy to clipboard
+
+### Copy using `clipboard`.
+
+<CH.Code>
+  ```javascript copy-to-clipboard.js
+    function copyTextToClipboard(selector) {
+    setTimeout(async function() {
+        window.navigator.clipboard.writeText(document.querySelector(selector).innerText).then(() => {
+            console.log("done")
+        }, (err) => {
+            console.log("Got error", err)
+        })
+    }, 100)
+  }
+
+  ```
+</CH.Code>
+
+### Usage:
+
+<CH.Code>
+  ```javascript
+    copyTextToClipboard(".content")
+  ```
+</CH.Code>

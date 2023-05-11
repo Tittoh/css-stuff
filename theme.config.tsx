@@ -5,6 +5,9 @@ import Logo from './components/layout/logo'
 
 const config: DocsThemeConfig = {
   logo: <Logo />,
+  search: {
+    placeholder: '🔍  Search snippets...'
+  },
   project: {
     link: 'https://github.com/Tittoh/snippets',
   },
